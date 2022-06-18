@@ -84,11 +84,8 @@ describe('common/ConfirmationDialogComponent', () => {
 
     // Assert
     const elementButtonClose = screen.getByRole('button', { name: 'Close' });
-
-    //userEvent.click(elementButtonClose);
-
+    //userEvent.click(elementButtonClose);     // No sé por qué no funciona con userEvent
     fireEvent.click(elementButtonClose);
-    // No sé por qué no funciona con userEvent
 
     expect(elementButtonClose).toBeInTheDocument();
     expect(closeFunction).toHaveBeenCalled();
@@ -113,10 +110,7 @@ describe('common/ConfirmationDialogComponent', () => {
     // Assert
     const elementButtonAccept = screen.getByRole('button', { name: 'Accept' });
 
-    //userEvent.click(elementButtonClose);
-
     fireEvent.click(elementButtonAccept);
-    // No sé por qué no funciona con userEvent
 
     expect(elementButtonAccept).toBeInTheDocument();
     expect(closeFunction).toHaveBeenCalled();

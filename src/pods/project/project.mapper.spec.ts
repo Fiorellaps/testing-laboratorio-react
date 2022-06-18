@@ -95,7 +95,7 @@ describe('./pods/project', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('should return one project with values when passing one project', () => {
+  it('should return one project with values when passing a project', () => {
     // Arrange
     const project: apiModel.Project = {
       id: 'test id',

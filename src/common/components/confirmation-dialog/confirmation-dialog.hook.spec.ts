@@ -9,10 +9,12 @@ describe('common/ConfirmationDialogComponent', () => {
     // Act
     const { result } = renderHook(() => useConfirmationDialog());
     // Assert
+    // create empty lookup element
     const emptyLookup: Lookup = {
       id: '',
       name: '',
     };
+
     expect(result.current.isOpen).toBeFalsy();
     expect(result.current.itemToDelete).toEqual(emptyLookup);
     expect(result.current.onClose).toEqual(expect.any(Function));
@@ -30,12 +32,13 @@ describe('common/ConfirmationDialogComponent', () => {
       id: 'test1',
       name: 'name1',
     };
+
+    // call to openDialog
     act(() => {
       result.current.onOpenDialog(newLookup);
     });
 
     // Assert
-
     expect(result.current.isOpen).toBeTruthy();
     expect(result.current.itemToDelete.id).toEqual('test1');
     expect(result.current.itemToDelete.name).toEqual('name1');
